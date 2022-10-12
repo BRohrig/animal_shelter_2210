@@ -58,7 +58,7 @@ RSpec.describe Shelter do
     end
 
   describe '#over_capacity?' do
-    it 'returns false if under capacity' do
+    it 'returns correct capacity boolean' do
 
       shelter = Shelter.new("Denver Animal Shelter", 3)
       shelter.add_pet('Salem')
@@ -67,4 +67,31 @@ RSpec.describe Shelter do
       expect(shelter.over_capacity?).to be false
     end
   end
+
+  describe '#over_capacity?' do 
+    it 'returns correct capacity boolean' do
+
+      shelter = Shelter.new("Denver Animal Shelter", 3)
+      shelter.add_pet('Salem')
+      shelter.add_pet('Beethoven')
+      shelter.add_pet('Muffin')
+
+      expect(shelter.over_capacity?).to be false
+    end
+  end
+
+  describe '#over_capacity?' do 
+    it 'returns correct capacity boolean' do
+
+      shelter = Shelter.new("Denver Animal Shelter", 3)
+      shelter.add_pet('Salem')
+      shelter.add_pet('Beethoven')
+      shelter.add_pet('Muffin')
+      shelter.add_pet('Tato')
+
+      expect(shelter.over_capacity?).to be true
+    end
+  end
+      
+
 end
