@@ -6,4 +6,8 @@ class Shelter
         @capacity = capacity
         @pets = []
     end
+
+    def add_pet(pet)
+        @pets.push(pet)
+    end
 end
