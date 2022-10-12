@@ -27,4 +27,8 @@ class Shelter
         end
     end
 
+    def adopt
+        @pets.pop
+    end
+
 end
